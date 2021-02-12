@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SecureChat</string>
+    <string name="room_name">Room Name</string>
+    <string name="date">12/01/2021 00:01</string>
+    <string name="chat_message">Happy Birthday!!!</string>
+    <string name="add_chat_room">Add Chat Room</string>
+    <string name="friend_name">Friend Name</string>
+    <string name="friend_list">Friend List</string>
+    <string name="add_friend">add_friend</string>
+    <string name="settings">Settings</string>
+</resources>
