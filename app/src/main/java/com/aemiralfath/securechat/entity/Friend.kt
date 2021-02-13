@@ -4,11 +4,9 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Room(
+data class Friend(
     var id: Int = 0,
-    var idServerRoom: String? = null,
     var name: String? = null,
-    var lastChat: String? = null,
-    var lastDate: String? = null,
-    var image: String? = null
-) : Parcelable
+    var status: String? = null,
+    var profileImage: String? = null
+):Parcelable

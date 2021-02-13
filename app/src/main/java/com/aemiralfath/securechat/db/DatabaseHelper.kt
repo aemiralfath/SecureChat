@@ -12,6 +12,7 @@ internal class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATAB
         private const val DATABASE_VERSION = 1
         private const val SQL_CREATE_TABLE_ROOM = "CREATE TABLE $TABLE_NAME" +
                 " (${RoomColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT," +
+                " ${RoomColumns._ID_SERVER_ROOM} TEXT NO NULL," +
                 " ${RoomColumns.NAME} TEXT NO NULL," +
                 " ${RoomColumns.LAST_CHAT} TEXT NO NULL," +
                 " ${RoomColumns.LAST_DATE} TEXT NO NULL," +

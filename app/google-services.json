@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "444470187198",
+    "firebase_url": "https://chat-eaa74-default-rtdb.firebaseio.com",
+    "project_id": "chat-eaa74",
+    "storage_bucket": "chat-eaa74.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444470187198:android:0fdfd7972000e183ddbaef",
+        "android_client_info": {
+          "package_name": "com.aemiralfath.securechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444470187198-1n6f95r0pli1e2d7n88m95ugchhth9bu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aemiralfath.securechat",
+            "certificate_hash": "66e1fa73adcf83d1ecf2d2592ed2ace3a21915af"
+          }
+        },
+        {
+          "client_id": "444470187198-f1me2t0go4vjcsunuv5qe0q0sl42j03s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCxQ8Qzr1mlv9zIErhZhRmqcHIdNUgd34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "444470187198-f1me2t0go4vjcsunuv5qe0q0sl42j03s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
