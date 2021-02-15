@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/friend_list"
-        android:icon="@drawable/ic_baseline_person_24"
-        android:title="@string/friend_list"
-        app:showAsAction="always"
-        />
-
-    <item
-        android:id="@+id/search_friend"
-        android:icon="@drawable/ic_baseline_person_add_alt_1_24"
-        android:title="@string/add_friend"
-        app:showAsAction="ifRoom"
-        />
 
     <item
         android:id="@+id/settings"
         android:icon="@drawable/ic_baseline_settings_24"
         android:title="@string/settings"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         />
 
 </menu>

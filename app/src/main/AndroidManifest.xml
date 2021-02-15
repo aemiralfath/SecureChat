@@ -11,9 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SecureChat">
-        <activity android:name=".activity.SettingsActivity"></activity>
+        <activity android:name=".activity.SettingsActivity" />
         <activity android:name=".activity.SignInActivity" />
-        <activity android:name=".activity.FriendProfileActivity" />
         <activity android:name=".activity.RoomAddActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>

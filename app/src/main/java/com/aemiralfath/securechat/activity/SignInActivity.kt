@@ -16,16 +16,23 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 
 class SignInActivity : AppCompatActivity() {
-    private val TAG: String = "SignInActivity"
+
     private val RC_SIGN_IN: Int = 9001
+    private val TAG: String = "SignInActivity"
+    private val USER_CHILD: String = "User"
 
     private lateinit var binding: ActivitySignInBinding
     private lateinit var mSignInClient: GoogleSignInClient
 
     private lateinit var mFirebaseAuth: FirebaseAuth
+    private lateinit var mFirebaseDatabase: FirebaseDatabase
+
+    private lateinit var userRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +53,9 @@ class SignInActivity : AppCompatActivity() {
 
         // Initialize FirebaseAuth
         mFirebaseAuth = FirebaseAuth.getInstance()
+        mFirebaseDatabase = FirebaseDatabase.getInstance()
+        userRef = mFirebaseDatabase.getReference().child(USER_CHILD)
+
         supportActionBar?.title = ""
     }
 

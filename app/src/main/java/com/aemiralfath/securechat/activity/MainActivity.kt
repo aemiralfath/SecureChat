@@ -51,12 +51,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun setMode(selectedMode: Int) {
         when (selectedMode) {
-            R.id.friend_list -> {
-
-            }
-            R.id.search_friend -> {
-
-            }
             R.id.settings -> {
                 startActivity(Intent(this, SettingsActivity::class.java))
             }
