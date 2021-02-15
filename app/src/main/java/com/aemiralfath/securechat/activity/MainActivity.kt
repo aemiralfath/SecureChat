@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mFirebaseAuth: FirebaseAuth
 
     private var title = "Chat Room"
-    private val ANONYMOUS = "anonymous"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
             }
             R.id.settings -> {
-
+                startActivity(Intent(this, SettingsActivity::class.java))
             }
         }
     }
@@ -72,27 +71,6 @@ class MainActivity : AppCompatActivity() {
             finish()
             return
         }
-    }
-
-    private fun getUserPhotoUrl(): String? {
-        val user = mFirebaseAuth.currentUser
-        return if (user != null && user.photoUrl != null){
-            return user.photoUrl.toString()
-        }else null
-    }
-
-    private fun getUserName():String{
-        val user = mFirebaseAuth.currentUser
-        return if (user != null) {
-            user.displayName!!
-        } else ANONYMOUS
-    }
-
-    private fun signOut() {
-        mFirebaseAuth.signOut()
-        mSignInClient.signOut()
-        startActivity(Intent(this, SignInActivity::class.java))
-        finish()
     }
 
 }
