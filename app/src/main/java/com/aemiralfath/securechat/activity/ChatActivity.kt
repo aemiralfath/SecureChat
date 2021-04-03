@@ -134,8 +134,8 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun receiveMessage(model: FirebaseMessage, holder: MessageViewHolder) {
-        if (model.text != null) {
-            if (model.sign != null) {
+        if (model.text != null && model.decrypt == null) {
+            if (model.sign != null && model.publicKey != null) {
 
                 val verify =
                     digitalSignature.verifySign(
@@ -152,6 +152,7 @@ class ChatActivity : AppCompatActivity() {
             } else {
                 model.text = aes.decrypt(model.text!!)
             }
+            model.decrypt = true
         }
 
         binding.progressBar.visibility = ProgressBar.INVISIBLE

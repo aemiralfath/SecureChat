@@ -38,6 +38,7 @@ class AES {
 
     @SuppressLint("GetInstance")
     fun decrypt(cipherToDecrypt: String): String {
+
         Security.addProvider(BouncyCastleProvider())
 
         try {
