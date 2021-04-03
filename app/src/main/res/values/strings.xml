@@ -14,4 +14,13 @@
     <string name="name">Name</string>
     <string name="sign_out">Sign Out</string>
     <string name="email">email</string>
+    <string name="button_chat">Button Chat</string>
+    <string name="button_avalanche_effect">Button Avalanche Effect</string>
+    <string name="button_processing_time">Button Processing Time</string>
+    <string name="button_about">Button About</string>
+    <string name="add_message">Add Message</string>
+    <string name="send">SEND</string>
+    <string name="this_is_messsage">This is Messsage</string>
+    <string name="image_message">Image Message</string>
+    <string name="user_name">User Name</string>
 </resources>

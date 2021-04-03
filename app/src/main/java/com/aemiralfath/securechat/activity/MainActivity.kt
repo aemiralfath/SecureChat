@@ -2,6 +2,7 @@ package com.aemiralfath.securechat.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -15,12 +16,13 @@ import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        const val TAG = "MainActivity"
+    }
 
     private lateinit var mSignInClient: GoogleSignInClient
-    private lateinit var binding: ActivityMainBinding
-
-    // Firebase instance variables
     private lateinit var mFirebaseAuth: FirebaseAuth
+    private lateinit var binding: ActivityMainBinding
 
     private var title = "Chat Room"
 
@@ -29,14 +31,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val gso: GoogleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail().build()
+        val gso: GoogleSignInOptions =
+            GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail().build()
 
         mSignInClient = GoogleSignIn.getClient(this, gso)
 
-        binding.rvRoom.setHasFixedSize(true)
         supportActionBar?.title = title
+
+        binding.imgBtnChat.setOnClickListener{
+            startActivity(Intent(this, ChatActivity::class.java))
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -60,7 +66,9 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         mFirebaseAuth = FirebaseAuth.getInstance()
-        if (mFirebaseAuth.currentUser == null){
+        Log.d(TAG, mFirebaseAuth.currentUser.toString())
+
+        if (mFirebaseAuth.currentUser == null) {
             startActivity(Intent(this, SignInActivity::class.java))
             finish()
             return

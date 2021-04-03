@@ -22,9 +22,11 @@ import com.google.firebase.database.FirebaseDatabase
 
 class SignInActivity : AppCompatActivity() {
 
-    private val RC_SIGN_IN: Int = 9001
-    private val TAG: String = "SignInActivity"
-    private val USER_CHILD: String = "User"
+    companion object {
+        private const val RC_SIGN_IN: Int = 9001
+        private const val TAG: String = "SignInActivity"
+        private const val USER_CHILD: String = "User"
+    }
 
     private lateinit var binding: ActivitySignInBinding
     private lateinit var mSignInClient: GoogleSignInClient
@@ -54,7 +56,7 @@ class SignInActivity : AppCompatActivity() {
         // Initialize FirebaseAuth
         mFirebaseAuth = FirebaseAuth.getInstance()
         mFirebaseDatabase = FirebaseDatabase.getInstance()
-        userRef = mFirebaseDatabase.getReference().child(USER_CHILD)
+        userRef = mFirebaseDatabase.reference.child(USER_CHILD)
 
         supportActionBar?.title = ""
     }

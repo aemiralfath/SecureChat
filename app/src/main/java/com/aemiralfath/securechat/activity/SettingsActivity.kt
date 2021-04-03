@@ -58,11 +58,6 @@ class SettingsActivity : AppCompatActivity() {
         } else "ANONYMOUS"
     }
 
-    private fun getUserID():String{
-        val user = mFirebaseAuth.currentUser
-        return user?.uid ?: "ANONYMOUS"
-    }
-
     private fun getUserEmail():String{
         val user = mFirebaseAuth.currentUser
         return if (user != null) {
