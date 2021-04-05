@@ -34,6 +34,7 @@ class ChatActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "ChatActivity"
+        private const val TITLE = "Chat Room"
         private const val MESSAGES_CHILD = "messages"
         private const val ANONYMOUS = "anonymous"
         private const val REQUEST_IMAGE = 2
@@ -55,6 +56,8 @@ class ChatActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.title = TITLE
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -103,8 +106,7 @@ class ChatActivity : AppCompatActivity() {
             MyScrollToBottomObserver(binding.rvMessages, firebaseAdapter, linearLayoutManager)
         )
 
-
-        binding.edtMessage.addTextChangedListener(MyButtonObserver(binding.btnSend))
+        binding.edtMessage.addTextChangedListener(MyButtonObserver(binding.btnSend, null))
 
         val publicKeyBytes = Base64.encode(keyPair.public.encoded, 0)
         val publicK = String(publicKeyBytes)

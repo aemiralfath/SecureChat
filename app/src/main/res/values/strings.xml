@@ -41,4 +41,11 @@
     <string name="decrypt_time">Decrypt Time</string>
     <string name="verify_time">Verify Time</string>
     <string name="receive_time">Receive Time</string>
+    <string name="text_a">Text A</string>
+    <string name="text_b">Text B</string>
+    <string name="chipertext_a">Ciphertext A</string>
+    <string name="ciphertext_a">Ciphertext A</string>
+    <string name="ciphertext_b">Ciphertext B</string>
+    <string name="text_length_a">Text Length A</string>
+    <string name="text_length_b">Text Length B</string>
 </resources>

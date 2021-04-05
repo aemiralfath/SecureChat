@@ -47,6 +47,10 @@ class MainActivity : AppCompatActivity() {
         binding.imgBtnProcessingTime.setOnClickListener{
             startActivity(Intent(this, ProcessingTimeActivity::class.java))
         }
+
+        binding.imgBtnAvalancheEffect.setOnClickListener{
+            startActivity(Intent(this, AvalancheEffectActivity::class.java))
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
