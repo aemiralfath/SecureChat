@@ -106,19 +106,25 @@ class ChatActivity : AppCompatActivity() {
 
         binding.edtMessage.addTextChangedListener(MyButtonObserver(binding.btnSend))
 
-        val pkBytes = Base64.encode(keyPair.public.encoded, 0)
-        val pk = String(pkBytes)
-        Log.d(TAG, pk)
+        val publicKeyBytes = Base64.encode(keyPair.public.encoded, 0)
+        val publicK = String(publicKeyBytes)
 
         binding.btnSend.setOnClickListener {
-            val cipherText = aes.encrypt(binding.edtMessage.text.toString())
+            val start = System.nanoTime()
+            val text = binding.edtMessage.text.toString()
+            val cipherText = aes.encrypt(text)
+            val signText = digitalSignature.sign(cipherText, keyPair.private)
+            val end = System.nanoTime()
+
             val message = FirebaseMessage(
                 cipherText,
+                text.length,
+                end - start,
+                signText,
+                publicK,
                 getUserName(),
                 getUserPhotoUrl(),
-                null,
-                digitalSignature.sign(cipherText, keyPair.private),
-                pk
+                null
             )
 
             database.reference.child(MESSAGES_CHILD).push().setValue(message)
@@ -171,10 +177,9 @@ class ChatActivity : AppCompatActivity() {
                 Log.d(MainActivity.TAG, "Uri:" + uri.toString())
                 val user = firebaseAuth.currentUser
                 val tempMessage = FirebaseMessage(
-                    null,
-                    getUserName(),
-                    getUserPhotoUrl(),
-                    LOADING_IMAGE_URL
+                    name = getUserName(),
+                    photoUrl = getUserPhotoUrl(),
+                    imageUrl = LOADING_IMAGE_URL
                 )
 
                 database.reference.child(MESSAGES_CHILD).push()
@@ -205,7 +210,11 @@ class ChatActivity : AppCompatActivity() {
             taskSnapshot.metadata!!.reference!!.downloadUrl.addOnSuccessListener { uri ->
                 Log.d(TAG, "Success Upload")
                 val friendlyMessage =
-                    FirebaseMessage(null, getUserName(), getUserPhotoUrl(), uri.toString())
+                    FirebaseMessage(
+                        name = getUserName(),
+                        photoUrl = getUserPhotoUrl(),
+                        imageUrl = uri.toString()
+                    )
                 database.reference.child(MESSAGES_CHILD).child(key)
                     .setValue(friendlyMessage)
             }

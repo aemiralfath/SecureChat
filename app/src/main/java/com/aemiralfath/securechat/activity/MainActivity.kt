@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mFirebaseAuth: FirebaseAuth
     private lateinit var binding: ActivityMainBinding
 
-    private var title = "Chat Room"
+    private var title = "Chat App"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +42,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.imgBtnChat.setOnClickListener{
             startActivity(Intent(this, ChatActivity::class.java))
+        }
+        
+        binding.imgBtnProcessingTime.setOnClickListener{
+            startActivity(Intent(this, ProcessingTimeActivity::class.java))
         }
     }
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SecureChat</string>
+    <string name="app_name">Chat App</string>
     <string name="room_name">Room Name</string>
     <string name="date">12/01/2021 00:01</string>
     <string name="chat_message">Happy Birthday!!!</string>
@@ -20,7 +20,25 @@
     <string name="button_about">Button About</string>
     <string name="add_message">Add Message</string>
     <string name="send">SEND</string>
-    <string name="this_is_messsage">This is Messsage</string>
+    <string name="this_is_message">This is Message</string>
     <string name="image_message">Image Message</string>
     <string name="user_name">User Name</string>
+    <string name="chat_app_logo">Chat App Logo</string>
+    <string name="chat_room">Chat Room</string>
+    <string name="avalanche_effect">Avalanche Effect</string>
+    <string name="processing_time">Processing Time</string>
+    <string name="about_app">About App</string>
+    <string name="text">Text</string>
+    <string name="count_time">Count Time</string>
+    <string name="result">Result</string>
+    <string name="not_set">Not Set</string>
+    <string name="cipher_text">Ciphertext</string>
+    <string name="sign">Sign</string>
+    <string name="text_length">Text Length</string>
+    <string name="encrypt_time">Encrypt Time</string>
+    <string name="sign_time">Sign Time</string>
+    <string name="send_time">Send Time</string>
+    <string name="decrypt_time">Decrypt Time</string>
+    <string name="verify_time">Verify Time</string>
+    <string name="receive_time">Receive Time</string>
 </resources>
