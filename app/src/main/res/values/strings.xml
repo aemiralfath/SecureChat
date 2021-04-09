@@ -48,4 +48,7 @@
     <string name="ciphertext_b">Ciphertext B</string>
     <string name="text_length_a">Text Length A</string>
     <string name="text_length_b">Text Length B</string>
+    <string name="google_logo">Google Logo</string>
+    <string name="teknik_informatika_universitas_sriwijaya">Teknik Informatika Universitas Sriwijaya</string>
+    <string name="ahmad_emir_alfatah">Ahmad Emir Alfatah</string>
 </resources>

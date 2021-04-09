@@ -45,6 +45,7 @@ class MessageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             }
         }
 
+        binding.tvItemDate.text = message.dateTime
         binding.tvUser.text = message.name ?: "Anonymous"
         Glide.with(itemView).load(message.photoUrl).placeholder(R.drawable.ic_baseline_person_24)
             .into(binding.imgUser)

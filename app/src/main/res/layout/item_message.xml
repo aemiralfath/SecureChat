@@ -8,8 +8,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_user"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/ic_baseline_person_24"
@@ -23,10 +23,23 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
         android:text="@string/user_name"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img_user"
         app:layout_constraintTop_toTopOf="@+id/img_user" />
+
+    <TextView
+        android:id="@+id/tv_item_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/date"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/img_user"
+        app:layout_constraintTop_toBottomOf="@+id/tv_user" />
 
     <ImageView
         android:id="@+id/img_message"
@@ -42,7 +55,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img_user"
-        app:layout_constraintTop_toBottomOf="@+id/tv_user"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_date"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -52,11 +65,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/this_is_message"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img_user"
-        app:layout_constraintTop_toBottomOf="@+id/tv_user" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_date" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

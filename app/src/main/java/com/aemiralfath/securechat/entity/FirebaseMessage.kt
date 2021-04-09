@@ -14,4 +14,5 @@ data class FirebaseMessage(
     var photoUrl: String? = null,
     var imageUrl: String? = null,
     var decrypt: Boolean? = null,
+    var dateTime: String? = null,
 ): Parcelable

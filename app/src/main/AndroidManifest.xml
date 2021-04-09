@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SecureChat"
         tools:ignore="AllowBackup">
-        <activity android:name=".activity.AvalancheEffectActivity"></activity>
+        <activity android:name=".activity.AboutActivity"></activity>
+        <activity android:name=".activity.AvalancheEffectActivity" />
         <activity android:name=".activity.ProcessingTimeActivity" />
         <activity
             android:name=".activity.SplashScreenActivity"

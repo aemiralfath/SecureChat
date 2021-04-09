@@ -51,6 +51,10 @@ class MainActivity : AppCompatActivity() {
         binding.imgBtnAvalancheEffect.setOnClickListener{
             startActivity(Intent(this, AvalancheEffectActivity::class.java))
         }
+
+        binding.imgBtnAbout.setOnClickListener{
+            startActivity(Intent(this, AboutActivity::class.java))
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

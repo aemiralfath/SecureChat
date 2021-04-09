@@ -1,5 +1,6 @@
 package com.aemiralfath.securechat.activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -29,6 +30,8 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.security.KeyPair
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ChatActivity : AppCompatActivity() {
 
@@ -52,6 +55,7 @@ class ChatActivity : AppCompatActivity() {
     private lateinit var digitalSignature: DigitalSignature
 
 
+    @SuppressLint("SimpleDateFormat")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityChatBinding.inflate(layoutInflater)
@@ -126,7 +130,9 @@ class ChatActivity : AppCompatActivity() {
                 publicK,
                 getUserName(),
                 getUserPhotoUrl(),
-                null
+                null,
+                null,
+                SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Date())
             )
 
             database.reference.child(MESSAGES_CHILD).push().setValue(message)
@@ -167,6 +173,7 @@ class ChatActivity : AppCompatActivity() {
         holder.bindMessage(model)
     }
 
+    @SuppressLint("SimpleDateFormat")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         Log.d(
@@ -181,7 +188,8 @@ class ChatActivity : AppCompatActivity() {
                 val tempMessage = FirebaseMessage(
                     name = getUserName(),
                     photoUrl = getUserPhotoUrl(),
-                    imageUrl = LOADING_IMAGE_URL
+                    imageUrl = LOADING_IMAGE_URL,
+                    dateTime = SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Date())
                 )
 
                 database.reference.child(MESSAGES_CHILD).push()
