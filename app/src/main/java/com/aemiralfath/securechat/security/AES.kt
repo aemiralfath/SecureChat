@@ -8,7 +8,7 @@ import javax.crypto.*
 import javax.crypto.spec.SecretKeySpec
 
 class AES {
-    private val keyBytes = "sTADoneSemester8".toByteArray(charset("UTF8"))
+    private val keyBytes = "1234567890123456".toByteArray(charset("UTF8"))
 
     @SuppressLint("GetInstance")
     fun encrypt(strToEncrypt: String): String {

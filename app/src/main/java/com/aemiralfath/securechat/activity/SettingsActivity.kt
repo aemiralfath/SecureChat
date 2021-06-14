@@ -37,7 +37,7 @@ class SettingsActivity : AppCompatActivity() {
         binding.tvItemName.text = getUserName()
         binding.tvItemEmail.text = getUserEmail()
         Glide.with(this).load(getUserPhotoUrl()).placeholder(R.drawable.ic_baseline_person_24)
-            .apply(RequestOptions().override(75, 75)).into(binding.imgItemPhoto)
+            .apply(RequestOptions().override(150, 150)).into(binding.imgItemPhoto)
 
         binding.btnSignOut.setOnClickListener{
             signOut()

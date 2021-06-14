@@ -48,8 +48,6 @@ class AvalancheEffectActivity : AppCompatActivity() {
                 val bitA = Integer.toBinaryString(byteA[i].toInt() and 255 or 256).substring(1)
                 val bitB = Integer.toBinaryString(byteB[i].toInt() and 255 or 256).substring(1)
 
-
-
                 if (bitA != bitB) {
                     diff += 1
                 }
